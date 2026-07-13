@@ -2,7 +2,7 @@
 
 ## Presentation
 
-[Watch the presentation](presentation/Retool%20vs%20Devon%20Internal%20Tools.mp4)
+[Watch the presentation](presentation/Retool%20vs%20Devin%20Internal%20Tools.mp4)
 
 ## About
 

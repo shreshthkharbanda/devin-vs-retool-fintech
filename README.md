@@ -4,12 +4,6 @@
 
 [Watch the presentation](presentation/Retool%20vs%20Devon%20Internal%20Tools.mp4)
 
-#### Video
-<video src="presentation/Retool%20vs%20Devon%20Internal%20Tools.mp4" controls width="720">
-  Video won't play inline here — watch it directly:
-  <a href="presentation/Retool vs Devon Internal Tools.mp4">presentation/Retool vs Devon Internal Tools.mp4</a>
-</video>
-
 ## About
 
 The backend for the KYC review queue. Retool is the screen a reviewer looks

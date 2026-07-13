@@ -1,3 +1,8 @@
-// Responsibility: read X-Reviewer-Email off the request (stand-in for what
-// SSO would give you for real), reject if missing, attach as req.actor for
-// every downstream handler and the audit-log middleware to use.
+export function actorMiddleware(req, res, next) {
+  const actor = req.header('X-Reviewer-Email');
+  if (!actor) {
+    return res.status(400).json({ error: 'X-Reviewer-Email header is required' });
+  }
+  req.actor = actor;
+  next();
+}

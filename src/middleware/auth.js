@@ -1,2 +1,7 @@
-// Responsibility: reject any request whose X-Demo-Key header doesn't match
-// process.env.DEMO_API_KEY, before it reaches any route. Applied globally.
+export function authMiddleware(req, res, next) {
+  const key = req.header('X-Demo-Key');
+  if (!key || key !== process.env.DEMO_API_KEY) {
+    return res.status(401).json({ error: 'invalid or missing X-Demo-Key header' });
+  }
+  next();
+}

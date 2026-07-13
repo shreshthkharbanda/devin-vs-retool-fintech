@@ -1,6 +1,12 @@
-// Responsibility:
-//   GET /api/audit-log?entity_id=&action=&limit=&before=
-//   Read-only, paginated, over kyc_audit_log ordered by occurred_at desc.
-//   This route itself is not audited (reading the audit log isn't a KYC
-//   action) but should still require auth + actor middleware like everything
-//   else.
+import { Router } from 'express';
+
+export function createAuditLogRouter(service) {
+  const router = Router();
+
+  router.get('/audit-log', async (req, res) => {
+    const { entity_id: entityId, action, limit } = req.query;
+    res.json(await service.listAuditLog({ entityId, action, limit }));
+  });
+
+  return router;
+}
